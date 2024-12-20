@@ -106,6 +106,8 @@ html{
 .inicio .contenido-banner .redes a:hover{
     background-color: #1CB698;
 }
+
+/*ABOUT ME 1
 .sobremi{
     background-color: #1e2326;
     color: #fff;
@@ -207,7 +209,67 @@ html{
 }
 .sobremi button:hover .overlay{
     width: 100%;
-}
+}*/
+
+/*about me*/
+.intro {
+    width: 100%;
+    height: 400%;
+    background: #030103;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .intro_image {
+    width: 30%;
+    margin-left: 300px;
+  }
+  
+  .intro_image img {
+    max-width: 110%;
+    border-radius: 30px;
+  }
+  
+  .intro_content {
+    position: absolute;
+   /* top: 50%;*/
+    transform: translateY(-40%);
+    right: 60px;
+    width: 600px;
+    background: #db95fc;
+    border: solid 2px #8c00ff;
+    box-shadow: 0px 45px 70px rgba(0, 0, 0, 0.24);
+    z-index: 1;
+    margin-top: 200px;
+    margin-right: 0px;
+    padding-top: 55px;
+    padding-bottom: 59px;
+    padding-left: 70px;
+    padding-right: 50px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .intro_subtitle {
+    font-size: 28px;
+    font-family: "Poppins";
+  }
+  
+  .intro_title {
+    margin-top: 6px;
+    font-family: "Great Vibes", cursive;
+    color: #000000;
+    font-weight: 600;
+  }
+  
+  .intro_title h2 {
+    font-size: 40px;
+  }
+  
+  .intro_text {
+    margin-top: 32px;
+    font-size: 14px;
+  }
 /* SECCION S K I L L S */
 .skills{
     background-color: #252A2E;
