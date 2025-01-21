@@ -248,6 +248,8 @@ html{
     padding-right: 50px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 20px;
   }
   
   .intro_subtitle {
@@ -420,6 +422,11 @@ html{
     0%{width: 0%;}
     100%{width: 75%;}
 }
+.skills .tools p{
+    padding-left: 250px;
+
+}
+
 /* SECCION CURRICULUM */
 .curriculum{
     background-color: #861591e7;
@@ -699,7 +706,7 @@ html{
 /* SECCION CONTACTO */
 .contacto{
     background-image: url(img/contact_bg.png);
-    background-color: #1e2326;
+    background-color: #000000;
     color: #fff;
     padding: 50px 0;
 }
@@ -762,11 +769,11 @@ html{
 }
 .contacto .col .info{
     position: absolute;
-    top: 40%;
+    top: 60%;
     background-color: #252A2E;
     padding: 20px;
   /*  max-swidth: 350px;*/
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
 }
 .contacto .col .info ul{
@@ -808,7 +815,7 @@ footer .arriba{
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #1CB698;
+    background-color: #a52dad;
     color: #fff;
     position: absolute;
     left: 50%;
