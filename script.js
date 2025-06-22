@@ -64,7 +64,10 @@ function efectoHabilidades(){
   prevBtn.addEventListener('click', () => moveToSlide(index - 1));
 
   /* Opcional: auto‑avance cada X segundos */
-  // setInterval(() => moveToSlide(index + 1), 5000);
+  setInterval(() => moveToSlide(index + 1), 5000);
+  
+  const track2 = document.querySelector('.tool-track2');
+  track.innerHTML += track.innerHTML; 
 
 //detecto el scrolling para aplicar la animacion de la barra de habilidades
 window.onscroll = function(){

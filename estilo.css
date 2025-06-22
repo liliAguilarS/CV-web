@@ -8,6 +8,7 @@
 html{
     /* me permite deslizar cuando hago clic en los links del menu */
     scroll-behavior: smooth;
+    overflow-x: hidden; 
 }
 /* MENU */
 .contenedor-header{
@@ -63,12 +64,12 @@ html{
     color: #fff;
     display: flex;
     align-items: center;
+    justify-content: flex-end;   /* ⬅️ Empuja el banner a la derecha */
+    padding-right: 6rem;
 }
 .inicio .contenido-banner{
     padding: 20px;
-    /*background-color: #00000061;*/
-    max-width: 450px;
-    margin-left: 850px;
+overflow-x: hidden;    max-width: 450px;
     text-align: center;
     border-radius: 40px;
 }
@@ -106,6 +107,69 @@ html{
 .inicio .contenido-banner .redes a:hover{
     background-color: #1CB698;
 }
+
+@media screen and (max-width: 991px) {
+    .inicio {
+      flex-direction: column;
+      justify-content: center;
+     /* align-items: center;*/
+      padding: 3rem 1rem;
+      height: auto;
+      text-align: center;
+    }
+  
+    .inicio .contenido-banner {
+      margin-left: 0;
+      margin: 0 auto;
+      max-width: 90%;
+      background-color: rgba(0, 0, 0, 0.5); /* opcional para mejor contraste */
+    }
+  
+    .inicio .contenido-banner img {
+      width: 60%;
+      margin-top: 20px;
+    }
+  
+    .inicio .contenido-banner h1 {
+      font-size: 28px;
+      margin-top: 20px;
+    }
+  
+    .inicio .contenido-banner h2 {
+      font-size: 14px;
+    }
+  
+    .inicio .contenido-banner .redes a {
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+      line-height: 38px;
+      margin: 20px 5px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .inicio .contenido-banner img {
+      width: 70%;
+    }
+  
+    .inicio .contenido-banner h1 {
+      font-size: 24px;
+    }
+  
+    .inicio .contenido-banner h2 {
+      font-size: 13px;
+    }
+  
+    .inicio .contenido-banner .redes a {
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+      line-height: 36px;
+    }
+  }
+  
+
 
 /*ABOUT ME 1
 .sobremi{
@@ -272,6 +336,60 @@ html{
     margin-top: 32px;
     font-size: 14px;
   }
+
+  /* --------------  BREAKPOINT ≤ 991 px  (tablets y móviles) -------------- */
+@media screen and (max-width: 991px) {
+
+    /* 1. Contenedor principal */
+    .intro{
+      height: auto;               /* evita scroll vertical excesivo */
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      position: relative;         /* asegura contexto si aún hay absolute dentro */
+    }
+  
+    /* 2. Caja morada con texto */
+    .intro_content{
+      position: static;           /* quita absolute para que fluya en vertical */
+      transform: none;
+      width: 90%;
+      max-width: 500px;
+      margin: 0 auto 3rem auto;   /* centrada y separada de la imagen */
+      padding: 2.5rem 2rem;
+    }
+  
+    /* 3. Imagen */
+    .intro_image{
+      width: 60%;                 /* más ancho en móviles */
+      margin: 0 auto;             /* centra horizontalmente */
+    }
+    .intro_image img{
+      max-width: 100%;            /* evita desbordar */
+    }
+  
+    /* 4. Tipografía y textos más compactos */
+    .intro_title h2{ font-size: 32px; }
+    .intro_subtitle{ font-size: 24px; }
+    .intro_text{ font-size: 15px; }
+  }
+  
+  
+  /* --------------  BREAKPOINT ≤ 480 px  (teléfonos pequeños) -------------- */
+  @media screen and (max-width: 480px) {
+  
+    .intro_content{
+      width: 95%;
+      padding: 2rem 1.5rem;
+    }
+  
+    .intro_image{ width: 75%; }
+  
+    .intro_title h2{ font-size: 26px; }
+    .intro_subtitle{ font-size: 20px; }
+    .intro_text{ font-size: 14px; line-height: 1.5; }
+  }
+
+  
 /* SECCION S K I L L S */
 .skills{
     background-color: #0d0f10;
@@ -422,10 +540,37 @@ html{
     0%{width: 0%;}
     100%{width: 75%;}
 }
-.skills .tools p{
-    padding-left: 250px;
-
-}
+.tools{
+    overflow: hidden;
+    width: 100%;
+    padding-block: 1rem;
+  }
+  
+  .tool-track2{
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    white-space: nowrap;
+    animation: scroll 25s linear infinite;
+  }
+  
+  .tool-track2:hover{ animation-play-state: paused; }
+  
+  .tools img{
+    width: clamp(2rem, 8vw, 3rem);
+    height: auto;
+    pointer-events: none;
+  }
+  
+  @media (max-width: 480px){
+    .tool-track2{ gap: 1rem; }
+  }
+  
+  @keyframes scroll{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  
 
 /* SECCION CURRICULUM */
 .curriculum{
@@ -642,12 +787,12 @@ html{
 }
 /* SECCION PORTFOLIO */
 .portfolio{
-    background-color: #252A2E;
+    background-color: #861591e7;
     color: #fff;
     padding: 50px 20px;
 }
 .portfolio .contenido-seccion{
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 }
 .portfolio h2{
@@ -851,7 +996,7 @@ footer .arriba{
 }
 /* --- Contenedor principal --- */
 .certificacion{
-    background-color: #252A2E;
+    background-color: #000000;
     color: #fff;
     padding: 50px 0;
 }
