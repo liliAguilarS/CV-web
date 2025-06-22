@@ -13,7 +13,7 @@ html{
 /* MENU */
 .contenedor-header{
     background: #000000;
-    position: fixed;
+   /* position: fixed;*/
     width: 100%;
     top: 0;
     left: 0;
@@ -679,7 +679,7 @@ overflow-x: hidden;    max-width: 450px;
     bottom: 4px;
 }
 
-
+/*curriculum expericiencia laboral */
 .curriculumE{
     background-color: #861591e7;
     color: #fff;
@@ -785,6 +785,62 @@ overflow-x: hidden;    max-width: 450px;
     position: relative;
     bottom: 4px;
 }
+
+/* --------------------------  TABLET / MÓVIL  ≤  991 px  -------------------------- */
+@media screen and (max-width: 991px){
+
+  /* 1. Título un poco más compacto */
+  .curriculumE h2{ font-size: 36px; }
+
+  /* 2. Coloca las dos columnas una debajo de la otra */
+  .curriculumE .fila{
+    flex-direction: column;
+    gap: 2rem;                /* separación entre bloques */
+  }
+  .curriculumE .fila .col{
+    width: 100%;
+    padding: 0;               /* elimina relleno lateral fijo */
+  }
+
+  /* 3. Quitamos los bordes divisores de escritorio */
+  .curriculumE .fila .izquierda,
+  .curriculumE .fila .derecha{
+    border: none;
+  }
+
+  /* 4. Item más aireados y sin los conectores horizontales */
+  .curriculumE .fila .item{
+    margin: 0 0 2rem 0;       /* top-bottom 2rem, laterales 0 */
+  }
+  .curriculumE .fila .item .conectori,
+  .curriculumE .fila .item .conectord{
+    display: none;            /* ocultamos línea y círculo */
+  }
+
+  /* 5. Ajustes tipográficos ligeros */
+  .curriculumE .fila .item h4{ font-size: 18px; }
+  .curriculumE .fila .item .casa{ font-size: 20px; }
+}
+
+
+/* --------------------------  TELÉFONO  ≤  480 px  -------------------------- */
+@media screen and (max-width: 480px){
+
+  .curriculumE h2{ font-size: 28px; }
+
+  .curriculumE .fila .item{
+    padding: 1.5rem;
+  }
+
+  .curriculumE .fila .item h4{ font-size: 17px; }
+  .curriculumE .fila .item .casa{ font-size: 18px; }
+  .curriculumE .fila .item p,
+  .curriculumE .fila .item li{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
 /* SECCION PORTFOLIO */
 .portfolio{
     background-color: #861591e7;
